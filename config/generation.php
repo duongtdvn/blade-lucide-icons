@@ -5,7 +5,7 @@ $svgNormalization = static function (string $tempFilepath) {
     $svgContent = file_get_contents($tempFilepath);
 
     if ($svgContent === false) {
-        die("Failed to read the SVG file.");
+        exit('Failed to read the SVG file.');
     }
 
     // Remove the comment
@@ -18,6 +18,7 @@ $svgNormalization = static function (string $tempFilepath) {
     $svgContent = preg_replace_callback('/<svg([^>]*)>/s', function ($matches) {
         // Remove any extra newlines or spaces between attributes
         $attributes = preg_replace('/\s+/', ' ', trim($matches[1]));
+
         return "<svg $attributes>";
     }, $svgContent);
 
@@ -28,7 +29,7 @@ $svgNormalization = static function (string $tempFilepath) {
     $result = file_put_contents($tempFilepath, $svgContent);
 
     if ($result === false) {
-        die("Failed to write the modified SVG content.");
+        exit('Failed to write the modified SVG content.');
     }
 };
 
