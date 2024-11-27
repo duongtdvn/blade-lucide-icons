@@ -3,6 +3,15 @@
 <a href="https://github.com/duongtdvn/blade-lucide-icons/actions?query=workflow%3ATests">
     <img src="https://github.com/duongtdvn/blade-lucide-icons/workflows/Tests/badge.svg" alt="Tests">
 </a>
+<a href="https://github.com/duongtdvn/blade-lucide-icons/actions/workflows/coding-standards.yml">
+    <img src="https://github.com/duongtdvn/blade-lucide-icons/actions/workflows/coding-standards.yml/badge.svg" alt="Coding Standards" />
+</a>
+<a href="https://packagist.org/packages/duongtdvn/blade-lucide-icons">
+    <img src="https://img.shields.io/packagist/v/duongtdvn/blade-lucide-icons" alt="Latest Stable Version">
+</a>
+<a href="https://packagist.org/packages/duongtdvn/blade-lucide-icons">
+    <img src="https://img.shields.io/packagist/dt/duongtdvn/blade-lucide-icons" alt="Total Downloads">
+</a>
 
 A package to easily make use of [Lucide icons](https://github.com/lucide-icons/lucide) in your Laravel Blade views.
 
