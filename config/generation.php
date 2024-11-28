@@ -11,13 +11,15 @@ $svgNormalization = static function (string $tempFilepath) {
     // Remove the comment
     $svgContent = preg_replace('/<!--.*?-->/s', '', $svgContent);
 
-    // Remove the 'class', 'width', and 'height' attributes
-    $svgContent = preg_replace('/\s(class|width|height)="[^"]*"/', '', $svgContent);
+    // Remove 'class', 'width', and 'height' attributes from the main <svg> tag only
+    $svgContent = preg_replace_callback('/<svg\b([^>]*)>/s', function ($matches) {
+        $attributes = $matches[1];
 
-    // Format the <svg> tag to have all attributes on the same line
-    $svgContent = preg_replace_callback('/<svg([^>]*)>/s', function ($matches) {
-        // Remove any extra newlines or spaces between attributes
-        $attributes = preg_replace('/\s+/', ' ', trim($matches[1]));
+        // Remove specific attributes (class, width, height)
+        $attributes = preg_replace('/\s(class|width|height)="[^"]*"/', '', $attributes);
+
+        // Normalize whitespace between remaining attributes
+        $attributes = preg_replace('/\s+/', ' ', trim($attributes));
 
         return "<svg $attributes>";
     }, $svgContent);
