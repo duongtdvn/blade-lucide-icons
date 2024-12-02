@@ -1,6 +1,6 @@
 {
-  "private": true,
-  "dependencies": {
-    "lucide-static": "^0.461.0"
-  }
+    "private": true,
+    "dependencies": {
+        "lucide-static": "^0.462.0"
+    }
 }
