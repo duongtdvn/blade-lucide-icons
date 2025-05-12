@@ -1,6 +1,6 @@
 {
     "private": true,
     "dependencies": {
-        "lucide-static": "^0.464.0"
+        "lucide-static": "^0.509.0"
     }
 }
